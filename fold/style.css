@@ -1,0 +1,12 @@
+.wp-block-gutenblocks-fold input,
+.gutenblocks-fold-reveal {
+	display: none;
+}
+
+.wp-block-gutenblocks-fold input:checked ~ .gutenblocks-fold-reveal {
+	display: block;
+}
+
+.wp-block-gutenblocks-fold label:hover {
+	cursor: pointer;
+}
