@@ -18,15 +18,8 @@ var webpack = require( 'webpack' ),
 			}
 		]
 	},
-	plugins: [
-		new webpack.DefinePlugin( {
-			'process.env.NODE_ENV': JSON.stringify( NODE_ENV )
-		} )
-	]
+	plugins: 'production' === NODE_ENV
+		? [ new webpack.optimize.UglifyJsPlugin() ] : []
 };
-
-if ( 'production' === NODE_ENV ) {
-	webpackConfig.plugins.push( new webpack.optimize.UglifyJsPlugin() );
-}
 
 module.exports = webpackConfig;
